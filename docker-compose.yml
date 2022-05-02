@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=parking
+    ports:
+      - 5432:5432
+  # smart-park-identy-back:
+  #   environment:
+  #     IDENTY_DATABASE_URI: postgresql://root:root@localhost:5432/identy
+  #     IDENTY_SECRET: super_secret
+  #     IDENTY_REFRESH_SECRET: refresh_super_secret
