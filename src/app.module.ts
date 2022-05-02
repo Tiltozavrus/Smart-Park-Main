@@ -1,7 +1,11 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthApiModule } from './common/api/auth.api.module';
+import { ParkingController } from './parking/parking.controller';
 import { ParkingModule } from './parking/parking.module';
+import { HttpModule } from "@nestjs/axios";
+import { AuthMiddleware } from './common/middlewares/auth.middleware';
 
 @Module({
     imports: [
@@ -20,7 +24,9 @@ import { ParkingModule } from './parking/parking.module';
             }),
             inject: [ConfigService]
         }),
-        ParkingModule
+        ParkingModule,
+        HttpModule,
+        AuthApiModule,
     ],
     controllers: [
         
@@ -29,4 +35,11 @@ import { ParkingModule } from './parking/parking.module';
         
     ],
 })
-export class AppModule {}
+export class AppModule implements NestModule{
+    configure(consumer: MiddlewareConsumer) {
+        consumer
+            .apply(AuthMiddleware)
+            .forRoutes(ParkingController)
+    }
+
+}

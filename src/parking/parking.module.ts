@@ -8,6 +8,10 @@ import { Park } from './entity/park.entity';
 import { ParkPlacesInfo } from './entity/park-place-info.entity';
 import { ReservedPlace } from './entity/reserved-place.entity';
 import { ReservedPlaceInfo } from './entity/reserved-place-info.entity';
+import { AuthApiModule } from '../common/api/auth.api.module';
+import { JwtModule } from '@nestjs/jwt';
+import { HttpModule } from '@nestjs/axios';
+import { AuthMiddleware } from '../common/middlewares/auth.middleware';
 
 @Module({
     imports: [
@@ -21,6 +25,8 @@ import { ReservedPlaceInfo } from './entity/reserved-place-info.entity';
             ]
         ),
         ConfigModule,
+        AuthApiModule,
+        HttpModule,
     ],
     providers: [
         ParkingService

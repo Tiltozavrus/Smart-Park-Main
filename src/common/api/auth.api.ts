@@ -35,17 +35,23 @@ export class AuthApi {
 
             }
         )
-
-        const result = await firstValueFrom(resp)
-        switch (result.data) {
-            case HttpStatus.OK:
-                return {
-                    result: "ok"
-                }
-            default:
-                return {
-                    result: "invalid"
-                }
+        
+        try {    
+            const result = await firstValueFrom(resp)
+            switch (result.status) {
+                case HttpStatus.OK:
+                    return {
+                        result: "ok"
+                    }
+                default:
+                    return {
+                        result: "invalid"
+                    }
+            }
+        } catch(e) {
+            return {
+                result: "invalid"
+            }
         }
     }
 }
