@@ -9,7 +9,7 @@ import { parseJwt } from "../utils/get-jwt-payload";
 
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class RoleGuard implements CanActivate {
     constructor (
         private reflector: Reflector, 
         // private readonly jwtService: JwtService,
