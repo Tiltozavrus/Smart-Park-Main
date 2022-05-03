@@ -13,7 +13,7 @@ export class ParkPlacesInfo implements ParkPlaceInfoType {
     @Column()
     occupiedSpaces: number
 
-    @Column({type: 'timestamp'})
+    @Column({type: 'timestamp', default: 'NOW()'})
     createdAt: Date
 
     @ManyToOne(()=> Park, (park) => park.parkPlacesInfo)
