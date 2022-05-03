@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Geometry } from 'geojson';
+import { Geometry, Point } from 'geojson';
 import { FindOneOptions, Repository, Timestamp } from 'typeorm';
 import { CreateParkReq } from './dto/create-park.dto';
 import { GetParkParams } from './dto/get-park.dto';
@@ -97,7 +97,7 @@ export class ParkingService {
             floor: number,
             placeUUID: string,
             placeType: PlaceType,
-            coords: Geometry
+            coords: Point
         }
     ) {
         const place = this.parkPlaceReposiotry.merge(
