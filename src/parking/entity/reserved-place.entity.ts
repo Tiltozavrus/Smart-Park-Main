@@ -14,19 +14,19 @@ export class ReservedPlace {
     parkPlace: ParkPlace
 
     @Column({type: 'timestamp'})
-    from: Timestamp
+    from: Date
 
     @Column({type: 'timestamp'})
-    to: Timestamp
+    to: Date
 
     @Column({type: 'boolean'})
     done: boolean
 
     @Column({type: 'timestamp'})
-    createdAt: Timestamp
+    createdAt: Date
 
     @Column({type: 'timestamp'})
-    updatedAt: Timestamp
+    updatedAt: Date
 
     @OneToOne(() => ReservedPlaceInfo, (info) => info.reservedPlace)
     reservedPlaceInfo: ReservedPlaceInfo

@@ -3,9 +3,11 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 import { PlaceType } from "../models/place-type";
 import { Park } from "./park.entity";
 import { ReservedPlace } from "./reserved-place.entity";
+import { ParkPlace as ParkPlaceType } from "../models/park-place.model";
+
 
 @Entity()
-export class ParkPlace {
+export class ParkPlace implements ParkPlaceType {
     @PrimaryGeneratedColumn()
     id: number
 

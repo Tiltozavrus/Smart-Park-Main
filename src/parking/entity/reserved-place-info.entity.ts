@@ -7,10 +7,10 @@ export class ReservedPlaceInfo {
     id: number
 
     @Column({type: 'timestamp', nullable: true})
-    arriveTime: Timestamp
+    arriveTime: Date
 
     @Column({type: 'timestamp', nullable: true})
-    departureTime: Timestamp
+    departureTime: Date
 
     @OneToOne(() => ReservedPlace, (place) => place.reservedPlaceInfo)
     reservedPlace: ReservedPlace
