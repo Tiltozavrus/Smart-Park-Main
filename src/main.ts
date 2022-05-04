@@ -16,8 +16,17 @@ async function bootstrap() {
         .addBearerAuth()
         .build()
     )
-
-    SwaggerModule.setup('swagger', app, document)
+    
+    SwaggerModule.setup(
+            'swagger', 
+            app,
+            document,
+            {
+                swaggerOptions: {
+                    displayRequestDuration: true,
+                },
+            }
+        )
     
     await app.listen(3000);
 }

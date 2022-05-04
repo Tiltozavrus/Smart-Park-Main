@@ -34,7 +34,7 @@ export class RoleGuard implements CanActivate {
         if (token == undefined) {
             return false
         }
-        const {role: decodedRole} = parseJwt(token)
+        const {payload: {role: decodedRole}} = parseJwt(token)
 
         return requiredRoles.some((role) => decodedRole.includes(role))
     }

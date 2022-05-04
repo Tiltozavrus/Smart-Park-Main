@@ -1,6 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { randomUUID } from "crypto";
 import { Geometry } from "geojson";
+import { Point } from "../../common/models/point";
 import { ParkPlace } from "../models/park-place.model";
 import { PlaceType } from "../models/place-type";
 
@@ -33,5 +34,5 @@ export class GetParkPlaceResp implements ParkPlace {
             },
         }
     )
-    coords: Geometry;
+    coords: Point;
 }

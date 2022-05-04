@@ -19,13 +19,13 @@ export class ReservedPlace {
     @Column({type: 'timestamp'})
     to: Date
 
-    @Column({type: 'boolean'})
+    @Column({type: 'boolean', default: false})
     done: boolean
 
-    @Column({type: 'timestamp'})
+    @Column({type: 'timestamp', default: 'NOW()'})
     createdAt: Date
 
-    @Column({type: 'timestamp'})
+    @Column({type: 'timestamp', nullable: true})
     updatedAt: Date
 
     @OneToOne(() => ReservedPlaceInfo, (info) => info.reservedPlace)
