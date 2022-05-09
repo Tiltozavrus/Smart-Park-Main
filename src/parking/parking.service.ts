@@ -204,7 +204,8 @@ export class ParkingService {
                 where: {
                     user_id: userId,
                     done: false,
-                }
+                },
+                
             }
         )
     }

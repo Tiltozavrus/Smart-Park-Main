@@ -152,4 +152,17 @@ export class ParkingController {
             throw e
         }
     }
+
+    @Get('/place/reserved/me')
+    @ApiResponse({type: GetReservedPlaceResp, status: 200})
+    @ApiBearerAuth()
+    async getReservedPlaceForUser(
+        @UserId() userId: number,
+    ) {
+        const reservedPlace = await this.service.getReservedPlaceForUser(userId)
+        if(!reservedPlace) {
+            throw new NotFoundException(ParkingServiceErrorType.UserDontHaveReservedPlace)
+        }
+        return reservedPlace
+    }
 }
