@@ -14,6 +14,6 @@ export class ParkingServiceError extends Error {
     }
 
     get name(): string {
-        return super.name
+        return this.type
     }
 }

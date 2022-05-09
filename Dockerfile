@@ -8,4 +8,4 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-CMD ["node", "build/src/main"]
+CMD ["node", "build/main"]
