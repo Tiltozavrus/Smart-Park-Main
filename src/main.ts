@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     app.useGlobalPipes(new ValidationPipe());
-
+    app.setGlobalPrefix('/api/parking')
     const document = SwaggerModule.createDocument(
         app, 
         new DocumentBuilder()
@@ -14,11 +14,12 @@ async function bootstrap() {
         .setDescription('Parking api description')
         .setVersion('1.0')
         .addBearerAuth()
+        .setBasePath('/api/parking')
         .build()
     )
     
     SwaggerModule.setup(
-            'swagger', 
+            'api/parking/swagger', 
             app,
             document,
             {
