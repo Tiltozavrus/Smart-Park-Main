@@ -173,14 +173,15 @@ export class ParkingController {
         @UserId() userId: number,
     ) {
         try {
-            const _ = await this.cancelReserveForUser(userId)
+            const reservedPlace = await this.getReservedPlaceForUser(userId)
+            const _ = await this.service.cancelReserve(reservedPlace.id, {user_id: userId})
         } catch(e) {
             if(e instanceof ParkingServiceError) {
                 switch(e.type) {
                     case ParkingServiceErrorType.ReservedPlaceNotFound:
-                        throw new NotFoundException(e.message)
+                        throw new NotFoundException(ParkingServiceErrorType.ReservedPlaceNotFound)
                     case ParkingServiceErrorType.YouNotReserveThisPlace:
-                        throw new ForbiddenException(e.message)
+                        throw new ForbiddenException(ParkingServiceErrorType.ReservedPlaceNotFound)
                 }
             }
 
