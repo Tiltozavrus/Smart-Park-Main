@@ -170,10 +170,10 @@ export class ParkingController {
     @ApiResponse({status: 200})
     @ApiBearerAuth()
     async cancelReserveForUser(
-        @UserId() userId: number
+        @UserId() userId: number,
     ) {
         try {
-            await this.cancelReserveForUser(userId)
+            const _ = await this.cancelReserveForUser(userId)
         } catch(e) {
             if(e instanceof ParkingServiceError) {
                 switch(e.type) {
