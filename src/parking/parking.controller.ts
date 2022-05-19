@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Catch, Controller, Get, NotFoundException, Param, Post, Query, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Catch, Controller, Delete, ForbiddenException, Get, NotFoundException, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiBody, ApiParam, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { QueryFailedError } from 'typeorm';
 import { Roles } from '../common/decorators/roles.decorator';
@@ -164,5 +164,27 @@ export class ParkingController {
             throw new NotFoundException(ParkingServiceErrorType.UserDontHaveReservedPlace)
         }
         return reservedPlace
+    }
+
+    @Delete('/place/reserved/cancel/me')
+    @ApiResponse({status: 200})
+    @ApiBearerAuth()
+    async cancelReserveForUser(
+        @UserId() userId: number
+    ) {
+        try {
+            await this.cancelReserveForUser(userId)
+        } catch(e) {
+            if(e instanceof ParkingServiceError) {
+                switch(e.type) {
+                    case ParkingServiceErrorType.ReservedPlaceNotFound:
+                        throw new NotFoundException(e.message)
+                    case ParkingServiceErrorType.YouNotReserveThisPlace:
+                        throw new ForbiddenException(e.message)
+                }
+            }
+
+            throw e
+        }
     }
 }

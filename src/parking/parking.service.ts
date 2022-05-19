@@ -161,7 +161,14 @@ export class ParkingService {
     async getPlace(
         placeId: number,
     ) {
-        return this.parkPlaceReposiotry.findOne(placeId)
+        return this.parkPlaceReposiotry.findOne(
+            {
+                where: {
+                    id: placeId,
+                },
+                relations: ['park']
+            }
+        )
     }
 
     async reservePlace(
@@ -193,7 +200,51 @@ export class ParkingService {
 
         reservePlace.parkPlace = place
 
+        const lastInfo = await this.getLastParkPlacesInfo(place.park.id)
+        this.createParkPlaceInfo(
+            place.park.id,
+            {
+                freeSpaces: lastInfo.freeSpaces - 1,
+                occupiedSpaces: lastInfo.occupiedSpaces + 1,
+            }
+        )
+
         return this.reservedPlaceReposiotry.save(reservePlace)
+    }
+
+    async cancelReserve(
+        reservedPlaceId: number,
+        req: {
+            user_id: number,
+        }
+    ) {
+        const resrvedPlace = await this.reservedPlaceReposiotry.findOne(
+            {
+                where: {
+                    id: reservedPlaceId,
+                },
+                relations: ['parkPlace', 'parkPlace.park']
+            }
+        )
+        if(!resrvedPlace) {
+            throw new ParkingServiceError(ParkingServiceErrorType.ReservedPlaceNotFound)
+        }
+
+        if (resrvedPlace.user_id != req.user_id) {
+            throw new ParkingServiceError(ParkingServiceErrorType.YouNotReserveThisPlace)
+        }
+
+        const lastInfo = await this.getLastParkPlacesInfo(resrvedPlace.parkPlace.park.id)
+        this.createParkPlaceInfo(
+            resrvedPlace.parkPlace.park.id,
+            {
+                freeSpaces: lastInfo.freeSpaces + 1,
+                occupiedSpaces: lastInfo.occupiedSpaces - 1,
+            }
+        )
+
+        resrvedPlace.done = true
+        this.reservedPlaceReposiotry.save(resrvedPlace)
     }
 
     getReservedPlaceForUser(
