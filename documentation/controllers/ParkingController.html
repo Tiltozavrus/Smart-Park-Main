@@ -1,0 +1,1169 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smart-parking-main documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">smart-parking-main documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Controllers</li>
+  <li >ParkingController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/parking/parking.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>parking</code>
+            </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>parking controller for http requests</p>
+
+            </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cancelReserveForUser" >cancelReserveForUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPark" >createPark</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPlace" >createPlace</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getLastParkPlacesInfo" >getLastParkPlacesInfo</a>
+                            </li>
+                            <li>
+                                <a href="#getPark" >getPark</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getParks" >getParks</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getReservedPlaceForUser" >getReservedPlaceForUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#reservePlace" >reservePlace</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelReserveForUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>cancelReserveForUser</b></span>
+                        <a href="#cancelReserveForUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelReserveForUser(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Delete(&#x27;/place/reserved/cancel/me&#x27;)<br />@ApiResponse({status: 200})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">src/parking/parking.controller.ts:242</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>cancel reserved place for user</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPark"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createPark</b></span>
+                        <a href="#createPark"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPark(req: <a href="../classes/CreateParkReq.html" target="_self">CreateParkReq</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post()<br />@ApiBody({type: CreateParkReq})<br />@ApiResponse({type: CreateParkResp, status: 201})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/parking/parking.controller.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create park</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="../classes/CreateParkReq.html" target="_self" >CreateParkReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPlace"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createPlace</b></span>
+                        <a href="#createPlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPlace(req: <a href="../classes/CreateParkPlaceReq.html" target="_self">CreateParkPlaceReq</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;/:id/place&#x27;)<br />@ApiBody({type: CreateParkPlaceReq})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;id of park&#x27;, type: Number})<br />@ApiBearerAuth()<br />@ApiResponse({type: GetParkPlaceResp, status: 201})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/parking/parking.controller.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create park place</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="../classes/CreateParkPlaceReq.html" target="_self" >CreateParkPlaceReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLastParkPlacesInfo"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getLastParkPlacesInfo</b></span>
+                        <a href="#getLastParkPlacesInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLastParkPlacesInfo(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;/:id/parkPlacesInfo/last&#x27;)<br />@ApiResponse({type: GetParkPlaceInfoResp, status: 200})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;id of park&#x27;, type: Number})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/parking/parking.controller.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get last park place infos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPark"></a>
+                    <span class="name">
+                        <span ><b>getPark</b></span>
+                        <a href="#getPark"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPark(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, query: <a href="../classes/GetParkParams.html" target="_self">GetParkParams</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;/:id&#x27;)<br />@ApiResponse({type: GetParkResp})<br />@ApiQuery({enum: ParkEdges, isArray: true, enumName: &#x27;edges&#x27;, required: false, name: &#x27;edges&#x27;})<br />@ApiParam({name: &#x27;id&#x27;, description: &#x27;id of park&#x27;, type: Number})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/parking/parking.controller.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get park by id</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>query</td>
+                                    <td>
+                                                <code><a href="../classes/GetParkParams.html" target="_self" >GetParkParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getParks"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getParks</b></span>
+                        <a href="#getParks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getParks(query: <a href="../classes/GetParksParams.html" target="_self">GetParksParams</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get()<br />@ApiResponse({type: GetParksResp, status: 200})<br />@ApiQuery({enum: ParkEdges, isArray: true, enumName: &#x27;edges&#x27;, required: false, name: &#x27;edges&#x27;})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/parking/parking.controller.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get parks</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>query</td>
+                                    <td>
+                                                <code><a href="../classes/GetParksParams.html" target="_self" >GetParksParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReservedPlaceForUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getReservedPlaceForUser</b></span>
+                        <a href="#getReservedPlaceForUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getReservedPlaceForUser(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(&#x27;/place/reserved/me&#x27;)<br />@ApiResponse({type: GetReservedPlaceResp, status: 200})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="223"
+                            class="link-to-prism">src/parking/parking.controller.ts:223</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get reserved place for user</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reservePlace"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>reservePlace</b></span>
+                        <a href="#reservePlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>reservePlace(placeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, req: <a href="../classes/CreateReservePlaceReq.html" target="_self">CreateReservePlaceReq</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;place/:placeId&#x27;)<br />@ApiParam({name: &#x27;placeId&#x27;, description: &#x27;id of place&#x27;, type: Number})<br />@ApiBody({type: CreateReservePlaceReq})<br />@ApiResponse({type: GetReservedPlaceResp, status: 201})<br />@ApiBearerAuth()<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/parking/parking.controller.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>resreve place</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="../classes/CreateReservePlaceReq.html" target="_self" >CreateReservePlaceReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Body, Catch, Controller, Delete, ForbiddenException, Get, NotFoundException, Param, Post, Query, UseGuards } from &#x27;@nestjs/common&#x27;;
+import { ApiBearerAuth, ApiBody, ApiParam, ApiQuery, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { QueryFailedError } from &#x27;typeorm&#x27;;
+import { Roles } from &#x27;../common/decorators/roles.decorator&#x27;;
+import { UserId } from &#x27;../common/decorators/user-id.decorator&#x27;;
+import { RoleGuard } from &#x27;../common/guards/role.guard&#x27;;
+import { Role } from &#x27;../common/models/roles&#x27;;
+import { ParkingServiceError, ParkingServiceErrorType } from &#x27;./parking.service.errors&#x27;;
+import { ValueOrArrayToArray } from &#x27;../common/pipes/vallue-or-array-to-array.pipe&#x27;;
+import { ValuesInEnumPipe } from &#x27;../common/pipes/value-in-enum.pipe&#x27;;
+import { CreateParkPlaceReq } from &#x27;./dto/create-park-place.dto&#x27;;
+import { CreateParkReq, CreateParkResp } from &#x27;./dto/create-park.dto&#x27;;
+import { CreateReservePlaceReq } from &#x27;./dto/create-reserve-place.dto&#x27;;
+import { GetParkPlaceInfoResp } from &#x27;./dto/get-park-place-info.dto&#x27;;
+import { GetParkParams, GetParkResp } from &#x27;./dto/get-park.dto&#x27;;
+import { GetParksParams, GetParksResp } from &#x27;./dto/get-parks.dto&#x27;;
+import { ParkEdges, ParkEdgesUtils } from &#x27;./models/park-edges.model&#x27;;
+import { ParkingService } from &#x27;./parking.service&#x27;;
+import { GetReservedPlaceResp } from &#x27;./dto/get-reserve-place.dto&#x27;;
+import { GetParkPlaceResp } from &#x27;./dto/get-park-place.dto&#x27;;
+
+/**
+ * parking controller for http requests
+ *
+ * @export
+ * @class ParkingController
+ */
+@ApiTags(&quot;parking&quot;)
+@Controller(&#x27;parking&#x27;)
+export class ParkingController {
+
+    /**
+     * Creates an instance of ParkingController.
+     * @param {ParkingService} service
+     * @memberof ParkingController
+     */
+    constructor(
+        private readonly service: ParkingService,
+    ) {}
+
+    /**
+     * create park
+     *
+     * @param {CreateParkReq} req
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Post()
+    @ApiBody({type: CreateParkReq})
+    @ApiResponse({type: CreateParkResp, status: 201})
+    @ApiBearerAuth()
+    async createPark(
+        @Body() req: CreateParkReq,
+    ) {
+        return this.service.createPark(req).then(
+            (park) &#x3D;&gt; {
+                this.service.createParkPlaceInfo(park.id, {freeSpaces: park.totalPlaces, occupiedSpaces: 0})
+                return park
+            }
+        )
+    }
+
+    /**
+     * get park by id
+     *
+     * @param {number} id
+     * @param {GetParkParams} query
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Get(&#x27;/:id&#x27;)
+    @ApiResponse({type: GetParkResp})
+    @ApiQuery({enum: ParkEdges, isArray: true, enumName: &quot;edges&quot;, required: false, name: &#x27;edges&#x27;})
+    @ApiParam({name: &#x27;id&#x27;, description: &quot;id of park&quot;, type: Number})
+    @ApiBearerAuth()
+    getPark(
+        @Param(&#x27;id&#x27;) id: number,
+        @Query(
+            new ValueOrArrayToArray&lt;GetParkParams, string&gt;(
+                value &#x3D;&gt; value.edges,
+                (value, array) &#x3D;&gt; value.edges &#x3D; array
+            ),
+            new ValuesInEnumPipe&lt;GetParkParams&gt;(
+                value &#x3D;&gt; value.edges,
+                value &#x3D;&gt; ParkEdgesUtils.valueIn(value),
+                (value, newValues) &#x3D;&gt; value.edges &#x3D; newValues
+            )
+        ) query: GetParkParams
+    ) {
+        return this.service.getPark(
+            id,
+            query,
+        )
+    }
+
+    /**
+     * get parks
+     *
+     * @param {GetParksParams} query
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Get()
+    @ApiResponse({type: GetParksResp, status: 200})
+    @ApiQuery({enum: ParkEdges, isArray: true, enumName: &quot;edges&quot;, required: false, name: &#x27;edges&#x27;})
+    @ApiBearerAuth()
+    async getParks(
+        @Query(
+            new ValueOrArrayToArray&lt;GetParksParams, string&gt;(
+                value &#x3D;&gt; value.edges,
+                (value, array) &#x3D;&gt; value.edges &#x3D; array
+            ),
+            new ValuesInEnumPipe&lt;GetParksParams&gt;(
+                value &#x3D;&gt; value.edges,
+                value &#x3D;&gt; ParkEdgesUtils.valueIn(value),
+                (value, newValues) &#x3D;&gt; value.edges &#x3D; newValues
+            )
+        ) query: GetParksParams,
+    ) {
+        const parks &#x3D; await this.service.getParks(query)
+        return {
+            items: parks
+        }
+    }
+
+    /**
+     * get last park place infos
+     *
+     * @param {number} id
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Get(&#x27;/:id/parkPlacesInfo/last&#x27;)
+    @ApiResponse({type: GetParkPlaceInfoResp, status: 200})
+    @ApiParam({name: &#x27;id&#x27;, description: &quot;id of park&quot;, type: Number})
+    @ApiBearerAuth()
+    async getLastParkPlacesInfo(
+        @Param(&#x27;id&#x27;) id: number,
+    ) {
+        const lastParkPlaceInfo &#x3D; await this.service.getLastParkPlacesInfo(id)
+        if(!lastParkPlaceInfo) {
+            throw new NotFoundException()
+        }
+        return lastParkPlaceInfo
+    }
+
+    /**
+     * create park place
+     *
+     * @param {CreateParkPlaceReq} req
+     * @param {number} id
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Post(&#x27;/:id/place&#x27;)
+    @ApiBody({type: CreateParkPlaceReq})
+    @ApiParam({name: &#x27;id&#x27;, description: &quot;id of park&quot;, type: Number})
+    @ApiBearerAuth()
+    @ApiResponse({type: GetParkPlaceResp, status: 201})
+    async createPlace(
+        @Body() req: CreateParkPlaceReq,
+        @Param(&#x27;id&#x27;) id: number,
+    ) {
+        
+        try {
+            const place &#x3D; await this.service.createParkPlace(id, req)
+            return place
+        } catch(e) {
+            if(e instanceof QueryFailedError) {
+                throw new NotFoundException(&quot;Park not found&quot;)
+            }
+        }
+    }
+
+    /**
+     * resreve place
+     *
+     * @param {number} placeId
+     * @param {number} userId
+     * @param {CreateReservePlaceReq} req
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Post(&#x27;place/:placeId&#x27;)
+    @ApiParam({name: &#x27;placeId&#x27;, description: &quot;id of place&quot;, type: Number})
+    @ApiBody({type: CreateReservePlaceReq})
+    @ApiResponse({type: GetReservedPlaceResp, status: 201})
+    @ApiBearerAuth()
+    async reservePlace(
+        @Param(&#x27;placeId&#x27;) placeId: number,
+        @UserId() userId: number,
+        @Body() req: CreateReservePlaceReq,
+    ) {
+        try {
+            const reserved &#x3D; await this.service.reservePlace(placeId, {user_id: userId, ...req})
+            return reserved
+        } catch(e) {
+            if(e instanceof ParkingServiceError) {
+                switch(e.type) {
+                    case ParkingServiceErrorType.PlaceIsReserved:
+                        throw new BadRequestException(e.message)
+                    case ParkingServiceErrorType.PlaceNotFound:
+                        throw new NotFoundException(e.message)
+                    case ParkingServiceErrorType.UserAlreadyReservePlace:
+                        throw new BadRequestException(e.message)
+                }
+            }
+            // If not catchable
+            throw e
+        }
+    }
+
+    /**
+     * get reserved place for user
+     *
+     * @param {number} userId
+     * @return {*} 
+     * @memberof ParkingController
+     */
+    @Get(&#x27;/place/reserved/me&#x27;)
+    @ApiResponse({type: GetReservedPlaceResp, status: 200})
+    @ApiBearerAuth()
+    async getReservedPlaceForUser(
+        @UserId() userId: number,
+    ) {
+        const reservedPlace &#x3D; await this.service.getReservedPlaceForUser(userId)
+        if(!reservedPlace) {
+            throw new NotFoundException(ParkingServiceErrorType.UserDontHaveReservedPlace)
+        }
+        return reservedPlace
+    }
+
+    /**
+     * cancel reserved place for user
+     *
+     * @param {number} userId
+     * @memberof ParkingController
+     */
+    @Delete(&#x27;/place/reserved/cancel/me&#x27;)
+    @ApiResponse({status: 200})
+    @ApiBearerAuth()
+    async cancelReserveForUser(
+        @UserId() userId: number,
+    ) {
+        try {
+            const reservedPlace &#x3D; await this.getReservedPlaceForUser(userId)
+            const _ &#x3D; await this.service.cancelReserve(reservedPlace.id, {user_id: userId})
+        } catch(e) {
+            if(e instanceof ParkingServiceError) {
+                switch(e.type) {
+                    case ParkingServiceErrorType.ReservedPlaceNotFound:
+                        throw new NotFoundException(ParkingServiceErrorType.ReservedPlaceNotFound)
+                    case ParkingServiceErrorType.YouNotReserveThisPlace:
+                        throw new ForbiddenException(ParkingServiceErrorType.ReservedPlaceNotFound)
+                }
+            }
+
+            throw e
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'ParkingController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1715 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smart-parking-main documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">smart-parking-main documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >ParkingService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/parking/parking.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Parking service implementetion</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cancelReserve" >cancelReserve</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createForeignPark" >createForeignPark</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createForeignParkPlace" >createForeignParkPlace</a>
+                            </li>
+                            <li>
+                                <a href="#createPark" >createPark</a>
+                            </li>
+                            <li>
+                                <a href="#createParkPlace" >createParkPlace</a>
+                            </li>
+                            <li>
+                                <a href="#createParkPlaceInfo" >createParkPlaceInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getLastParkPlacesInfo" >getLastParkPlacesInfo</a>
+                            </li>
+                            <li>
+                                <a href="#getPark" >getPark</a>
+                            </li>
+                            <li>
+                                <a href="#getParks" >getParks</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPlace" >getPlace</a>
+                            </li>
+                            <li>
+                                <a href="#getReservedPlaceForUser" >getReservedPlaceForUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#placeIsReserved" >placeIsReserved</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#reservePlace" >reservePlace</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(parkReposiotry: <a href="../entitys/Park.html" target="_self">Repository&lt;Park&gt;</a>, parkPlacesInfoReposiotry: Repository<ParkPlacesInfo>, parkPlaceReposiotry: Repository<ParkPlace>, reservedPlaceReposiotry: <a href="../entitys/ReservedPlace.html" target="_self">Repository&lt;ReservedPlace&gt;</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/parking/parking.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of ParkingService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>parkReposiotry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../entitys/Park.html" target="_self" >Repository&lt;Park&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>parkPlacesInfoReposiotry</td>
+                                                  
+                                                        <td>
+                                                                    <code>Repository&lt;ParkPlacesInfo&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>parkPlaceReposiotry</td>
+                                                  
+                                                        <td>
+                                                                    <code>Repository&lt;ParkPlace&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>reservedPlaceReposiotry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../entitys/ReservedPlace.html" target="_self" >Repository&lt;ReservedPlace&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelReserve"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>cancelReserve</b></span>
+                        <a href="#cancelReserve"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelReserve(reservedPlaceId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, req: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="333"
+                            class="link-to-prism">src/parking/parking.service.ts:333</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>cancel reserve</p>
+<div><pre class="line-numbers"><code class="language-none">        user_id: number,
+    }} req</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reservedPlaceId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createForeignPark"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>createForeignPark</b></span>
+                        <a href="#createForeignPark"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createForeignPark(parkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/parking/parking.service.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create foreign park</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Park.html" target="_self" >Park</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>{Park}</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createForeignParkPlace"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>createForeignParkPlace</b></span>
+                        <a href="#createForeignParkPlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createForeignParkPlace(placeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">src/parking/parking.service.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create foreign park place</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPark"></a>
+                    <span class="name">
+                        <span ><b>createPark</b></span>
+                        <a href="#createPark"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createPark(req: <a href="../classes/CreateParkReq.html" target="_self">CreateParkReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/parking/parking.service.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create park</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="../classes/CreateParkReq.html" target="_self" >CreateParkReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createParkPlace"></a>
+                    <span class="name">
+                        <span ><b>createParkPlace</b></span>
+                        <a href="#createParkPlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createParkPlace(parkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, req: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/parking/parking.service.ts:166</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create park place</p>
+<div><pre class="line-numbers"><code class="language-none">        floor: number,
+        placeUUID: string,
+        placeType: PlaceType,
+        coords: Point
+    }} req</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createParkPlaceInfo"></a>
+                    <span class="name">
+                        <span ><b>createParkPlaceInfo</b></span>
+                        <a href="#createParkPlaceInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createParkPlaceInfo(parkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, req: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/parking/parking.service.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ceate parkPlace info list</p>
+<div><pre class="line-numbers"><code class="language-none">        freeSpaces: number,
+        occupiedSpaces: number,
+    }} req</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLastParkPlacesInfo"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getLastParkPlacesInfo</b></span>
+                        <a href="#getLastParkPlacesInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLastParkPlacesInfo(parkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/parking/parking.service.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get last park info of park</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPark"></a>
+                    <span class="name">
+                        <span ><b>getPark</b></span>
+                        <a href="#getPark"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPark(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, params: <a href="../classes/GetParkParams.html" target="_self">GetParkParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/parking/parking.service.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get park</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../classes/GetParkParams.html" target="_self" >GetParkParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getParks"></a>
+                    <span class="name">
+                        <span ><b>getParks</b></span>
+                        <a href="#getParks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getParks(params: <a href="../classes/GetParksParams.html" target="_self">GetParksParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/parking/parking.service.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get parks with filtering and edges</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../classes/GetParksParams.html" target="_self" >GetParksParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlace"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getPlace</b></span>
+                        <a href="#getPlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPlace(placeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="258"
+                            class="link-to-prism">src/parking/parking.service.ts:258</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get park place</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReservedPlaceForUser"></a>
+                    <span class="name">
+                        <span ><b>getReservedPlaceForUser</b></span>
+                        <a href="#getReservedPlaceForUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getReservedPlaceForUser(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="375"
+                            class="link-to-prism">src/parking/parking.service.ts:375</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get reserved place for user</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="placeIsReserved"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>placeIsReserved</b></span>
+                        <a href="#placeIsReserved"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>placeIsReserved(placeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/parking/parking.service.ts:228</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>check if place reserved</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reservePlace"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>reservePlace</b></span>
+                        <a href="#reservePlace"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>reservePlace(placeId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, req: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="283"
+                            class="link-to-prism">src/parking/parking.service.ts:283</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>resreve place</p>
+<div><pre class="line-numbers"><code class="language-none">        from: Date,
+        to: Date,
+        user_id: number
+    }} req</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placeId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GoneException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { Geometry, Point } from &#x27;geojson&#x27;;
+import { FindOneOptions, Repository, Timestamp } from &#x27;typeorm&#x27;;
+import { CreateParkReq } from &#x27;./dto/create-park.dto&#x27;;
+import { GetParkParams } from &#x27;./dto/get-park.dto&#x27;;
+import { GetParksParams } from &#x27;./dto/get-parks.dto&#x27;;
+import { ParkPlacesInfo } from &#x27;./entity/park-place-info.entity&#x27;;
+import { ParkPlace } from &#x27;./entity/park-place.entity&#x27;;
+import { Park } from &#x27;./entity/park.entity&#x27;;
+import { ReservedPlace } from &#x27;./entity/reserved-place.entity&#x27;;
+import { ParkEdges, ParkEdgesUtils } from &#x27;./models/park-edges.model&#x27;;
+import { PlaceType } from &#x27;./models/place-type&#x27;;
+import { ParkingServiceError, ParkingServiceErrorType } from &#x27;./parking.service.errors&#x27;;
+
+/**
+ * Parking service implementetion
+ *
+ * @export
+ * @class ParkingService
+ */
+@Injectable()
+export class ParkingService {
+    /**
+     * Creates an instance of ParkingService.
+     * @param {Repository&lt;Park&gt;} parkReposiotry
+     * @param {Repository&lt;ParkPlacesInfo&gt;} parkPlacesInfoReposiotry
+     * @param {Repository&lt;ParkPlace&gt;} parkPlaceReposiotry
+     * @param {Repository&lt;ReservedPlace&gt;} reservedPlaceReposiotry
+     * @memberof ParkingService
+     */
+    constructor(
+        @InjectRepository(Park)
+        private readonly parkReposiotry: Repository&lt;Park&gt;,
+
+        @InjectRepository(ParkPlacesInfo)
+        private readonly parkPlacesInfoReposiotry: Repository&lt;ParkPlacesInfo&gt;,
+
+        @InjectRepository(ParkPlace)
+        private readonly parkPlaceReposiotry: Repository&lt;ParkPlace&gt;,
+
+        @InjectRepository(ReservedPlace)
+        private readonly reservedPlaceReposiotry: Repository&lt;ReservedPlace&gt;,
+    ) {
+    }
+
+    /**
+     * create park
+     *
+     * @param {CreateParkReq} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    createPark(
+        req: CreateParkReq
+    ) {
+        const merged &#x3D;  this.parkReposiotry.merge(
+            this.parkReposiotry.create(),
+            req,
+        )
+        
+        return this.parkReposiotry.save(
+            merged
+        )
+    }
+
+    /**
+     * get park
+     *
+     * @param {number} id
+     * @param {GetParkParams} params
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    getPark(
+        id: number,
+        params: GetParkParams
+    ) {
+        return this.parkReposiotry.findOne(
+            id,
+            {
+                relations: params.edges 
+            }
+        )
+    }
+
+    /**
+     * get parks with filtering and edges
+     *
+     * @param {GetParksParams} params
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    getParks(
+        params: GetParksParams,
+    ) {
+        return this.parkReposiotry.find(
+            {
+                relations: params.edges,
+            }
+        )
+    }
+
+    /**
+     * get last park info of park
+     *
+     * @param {number} parkId
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    async getLastParkPlacesInfo(
+        parkId: number
+    ) {
+        return this.parkPlacesInfoReposiotry.findOne(
+            {
+                where: {
+                    park: {
+                        id: parkId
+                    }
+                }
+            }
+        )
+    }
+
+    /**
+     * ceate parkPlace info list
+     *
+     * @param {number} parkId
+     * @param {{
+     *             freeSpaces: number,
+     *             occupiedSpaces: number,
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    createParkPlaceInfo(
+        parkId: number,
+        req: {
+            freeSpaces: number,
+            occupiedSpaces: number,
+        }
+    ) {
+        const info &#x3D; this.parkPlacesInfoReposiotry.merge(
+            this.parkPlacesInfoReposiotry.create(),
+            req,
+        )
+
+        info.park &#x3D; this.createForeignPark(parkId)
+
+        return this.parkPlacesInfoReposiotry.save(info)
+    }
+
+    /**
+     * create park place
+     *
+     * @param {number} parkId
+     * @param {{
+     *             floor: number,
+     *             placeUUID: string,
+     *             placeType: PlaceType,
+     *             coords: Point
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    createParkPlace(
+        parkId: number,
+        req: {
+            floor: number,
+            placeUUID: string,
+            placeType: PlaceType,
+            coords: Point
+        }
+    ) {
+        const place &#x3D; this.parkPlaceReposiotry.merge(
+            this.parkPlaceReposiotry.create(),
+            req,
+        )
+
+        place.park &#x3D; this.createForeignPark(parkId)
+
+        return this.parkPlaceReposiotry.save(place)
+    }
+
+    /**
+     * create foreign park
+     *
+     * @private
+     * @param {number} parkId
+     * @return {*}  {Park}
+     * @memberof ParkingService
+     */
+    private createForeignPark(parkId: number): Park {
+        return this.parkReposiotry.merge(
+            this.parkReposiotry.create(),
+            {
+                id: parkId,
+            }
+        )
+    }
+
+    /**
+     * create foreign park place
+     *
+     * @private
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    private createForeignParkPlace(
+        placeId: number,
+    ) {
+        return this.parkPlaceReposiotry.merge(
+            this.parkPlaceReposiotry.create(),
+            {
+                id: placeId,
+            }
+        )
+    }
+
+    /**
+     * check if place reserved
+     *
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    async placeIsReserved(
+        placeId: number
+    ) {
+        const reservedPlace &#x3D; await this.reservedPlaceReposiotry.findOne(
+            {
+                where: {
+                    parkPlace: {
+                        id: placeId
+                    }
+                },
+                order: {
+                    createdAt: &#x27;ASC&#x27;
+                }
+            }
+        )
+
+        if(!reservedPlace || reservedPlace.done) {
+            return false
+        }
+
+        return true
+    }
+
+    /**
+     * get park place
+     *
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    async getPlace(
+        placeId: number,
+    ) {
+        return this.parkPlaceReposiotry.findOne(
+            {
+                where: {
+                    id: placeId,
+                },
+                relations: [&#x27;park&#x27;]
+            }
+        )
+    }
+
+    /**
+     * resreve place
+     *
+     * @param {number} placeId
+     * @param {{
+     *             from: Date,
+     *             to: Date,
+     *             user_id: number
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    async reservePlace(
+        placeId: number,
+        req: {
+            from: Date,
+            to: Date,
+            user_id: number
+        }
+    ) {
+        const place &#x3D; await this.getPlace(placeId)
+        if(!place) {
+            throw new ParkingServiceError(ParkingServiceErrorType.PlaceNotFound)
+        }
+
+        const reservedForUser &#x3D; await this.getReservedPlaceForUser(req.user_id)
+        if(reservedForUser) {
+            throw new ParkingServiceError(ParkingServiceErrorType.UserAlreadyReservePlace)
+        }
+        
+        if((await this.placeIsReserved(placeId))) {
+            throw new ParkingServiceError(ParkingServiceErrorType.PlaceIsReserved)
+        }
+
+        const reservePlace &#x3D; this.reservedPlaceReposiotry.merge(
+            this.reservedPlaceReposiotry.create(),
+            req,
+        )
+
+        reservePlace.parkPlace &#x3D; place
+
+        const lastInfo &#x3D; await this.getLastParkPlacesInfo(place.park.id)
+        this.createParkPlaceInfo(
+            place.park.id,
+            {
+                freeSpaces: lastInfo.freeSpaces - 1,
+                occupiedSpaces: lastInfo.occupiedSpaces + 1,
+            }
+        )
+
+        return this.reservedPlaceReposiotry.save(reservePlace)
+    }
+
+    /**
+     * cancel reserve
+     *
+     * @param {number} reservedPlaceId
+     * @param {{
+     *             user_id: number,
+     *         }} req
+     * @memberof ParkingService
+     */
+    async cancelReserve(
+        reservedPlaceId: number,
+        req: {
+            user_id: number,
+        }
+    ) {
+        const resrvedPlace &#x3D; await this.reservedPlaceReposiotry.findOne(
+            {
+                where: {
+                    id: reservedPlaceId,
+                },
+                relations: [&#x27;parkPlace&#x27;, &#x27;parkPlace.park&#x27;]
+            }
+        )
+        if(!resrvedPlace) {
+            throw new ParkingServiceError(ParkingServiceErrorType.ReservedPlaceNotFound)
+        }
+
+        if (resrvedPlace.user_id !&#x3D; req.user_id) {
+            throw new ParkingServiceError(ParkingServiceErrorType.YouNotReserveThisPlace)
+        }
+
+        const lastInfo &#x3D; await this.getLastParkPlacesInfo(resrvedPlace.parkPlace.park.id)
+        this.createParkPlaceInfo(
+            resrvedPlace.parkPlace.park.id,
+            {
+                freeSpaces: lastInfo.freeSpaces + 1,
+                occupiedSpaces: lastInfo.occupiedSpaces - 1,
+            }
+        )
+
+        resrvedPlace.done &#x3D; true
+        this.reservedPlaceReposiotry.save(resrvedPlace)
+    }
+
+    /**
+     * get reserved place for user
+     *
+     * @param {number} userId
+     * @return {*} 
+     * @memberof ParkingService
+     */
+    getReservedPlaceForUser(
+        userId: number
+    ) {
+        return this.reservedPlaceReposiotry.findOne(
+            {
+                where: {
+                    user_id: userId,
+                    done: false,
+                },
+                
+            }
+        )
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ParkingService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

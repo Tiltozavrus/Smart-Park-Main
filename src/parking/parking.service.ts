@@ -13,8 +13,22 @@ import { ParkEdges, ParkEdgesUtils } from './models/park-edges.model';
 import { PlaceType } from './models/place-type';
 import { ParkingServiceError, ParkingServiceErrorType } from './parking.service.errors';
 
+/**
+ * Parking service implementetion
+ *
+ * @export
+ * @class ParkingService
+ */
 @Injectable()
 export class ParkingService {
+    /**
+     * Creates an instance of ParkingService.
+     * @param {Repository<Park>} parkReposiotry
+     * @param {Repository<ParkPlacesInfo>} parkPlacesInfoReposiotry
+     * @param {Repository<ParkPlace>} parkPlaceReposiotry
+     * @param {Repository<ReservedPlace>} reservedPlaceReposiotry
+     * @memberof ParkingService
+     */
     constructor(
         @InjectRepository(Park)
         private readonly parkReposiotry: Repository<Park>,
@@ -30,6 +44,13 @@ export class ParkingService {
     ) {
     }
 
+    /**
+     * create park
+     *
+     * @param {CreateParkReq} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
     createPark(
         req: CreateParkReq
     ) {
@@ -43,6 +64,14 @@ export class ParkingService {
         )
     }
 
+    /**
+     * get park
+     *
+     * @param {number} id
+     * @param {GetParkParams} params
+     * @return {*} 
+     * @memberof ParkingService
+     */
     getPark(
         id: number,
         params: GetParkParams
@@ -55,6 +84,13 @@ export class ParkingService {
         )
     }
 
+    /**
+     * get parks with filtering and edges
+     *
+     * @param {GetParksParams} params
+     * @return {*} 
+     * @memberof ParkingService
+     */
     getParks(
         params: GetParksParams,
     ) {
@@ -65,6 +101,13 @@ export class ParkingService {
         )
     }
 
+    /**
+     * get last park info of park
+     *
+     * @param {number} parkId
+     * @return {*} 
+     * @memberof ParkingService
+     */
     async getLastParkPlacesInfo(
         parkId: number
     ) {
@@ -79,6 +122,17 @@ export class ParkingService {
         )
     }
 
+    /**
+     * ceate parkPlace info list
+     *
+     * @param {number} parkId
+     * @param {{
+     *             freeSpaces: number,
+     *             occupiedSpaces: number,
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
     createParkPlaceInfo(
         parkId: number,
         req: {
@@ -96,6 +150,19 @@ export class ParkingService {
         return this.parkPlacesInfoReposiotry.save(info)
     }
 
+    /**
+     * create park place
+     *
+     * @param {number} parkId
+     * @param {{
+     *             floor: number,
+     *             placeUUID: string,
+     *             placeType: PlaceType,
+     *             coords: Point
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
     createParkPlace(
         parkId: number,
         req: {
@@ -115,6 +182,14 @@ export class ParkingService {
         return this.parkPlaceReposiotry.save(place)
     }
 
+    /**
+     * create foreign park
+     *
+     * @private
+     * @param {number} parkId
+     * @return {*}  {Park}
+     * @memberof ParkingService
+     */
     private createForeignPark(parkId: number): Park {
         return this.parkReposiotry.merge(
             this.parkReposiotry.create(),
@@ -124,6 +199,14 @@ export class ParkingService {
         )
     }
 
+    /**
+     * create foreign park place
+     *
+     * @private
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
     private createForeignParkPlace(
         placeId: number,
     ) {
@@ -135,6 +218,13 @@ export class ParkingService {
         )
     }
 
+    /**
+     * check if place reserved
+     *
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
     async placeIsReserved(
         placeId: number
     ) {
@@ -158,6 +248,13 @@ export class ParkingService {
         return true
     }
 
+    /**
+     * get park place
+     *
+     * @param {number} placeId
+     * @return {*} 
+     * @memberof ParkingService
+     */
     async getPlace(
         placeId: number,
     ) {
@@ -171,6 +268,18 @@ export class ParkingService {
         )
     }
 
+    /**
+     * resreve place
+     *
+     * @param {number} placeId
+     * @param {{
+     *             from: Date,
+     *             to: Date,
+     *             user_id: number
+     *         }} req
+     * @return {*} 
+     * @memberof ParkingService
+     */
     async reservePlace(
         placeId: number,
         req: {
@@ -212,6 +321,15 @@ export class ParkingService {
         return this.reservedPlaceReposiotry.save(reservePlace)
     }
 
+    /**
+     * cancel reserve
+     *
+     * @param {number} reservedPlaceId
+     * @param {{
+     *             user_id: number,
+     *         }} req
+     * @memberof ParkingService
+     */
     async cancelReserve(
         reservedPlaceId: number,
         req: {
@@ -247,6 +365,13 @@ export class ParkingService {
         this.reservedPlaceReposiotry.save(resrvedPlace)
     }
 
+    /**
+     * get reserved place for user
+     *
+     * @param {number} userId
+     * @return {*} 
+     * @memberof ParkingService
+     */
     getReservedPlaceForUser(
         userId: number
     ) {

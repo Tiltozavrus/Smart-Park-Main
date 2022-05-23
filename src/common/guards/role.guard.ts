@@ -8,13 +8,32 @@ import { parseJwt } from "../utils/get-jwt-payload";
 // import { JwtService } from "@nestjs/jwt";
 
 
+/**
+ * Roles guard to check if user can run method
+ *
+ * @export
+ * @class RoleGuard
+ * @implements {CanActivate}
+ */
 @Injectable()
-export class RoleGuard implements CanActivate {
+export class RoleGuard implements CanActivate { 
+    /**
+     * Creates an instance of RoleGuard.
+     * @param {Reflector} reflector
+     * @memberof RoleGuard
+     */
     constructor (
         private reflector: Reflector, 
         // private readonly jwtService: JwtService,
     ) {}
     
+    /**
+     * can active method
+     *
+     * @param {ExecutionContext} context
+     * @return {*}  {(boolean | Promise<boolean> | Observable<boolean>)}
+     * @memberof RoleGuard
+     */
     canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
         const requiredRoles = this.reflector.getAllAndOverride<Role[]>(
             ROLES_KEY,

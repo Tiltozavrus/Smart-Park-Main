@@ -19,14 +19,32 @@ import { ParkingService } from './parking.service';
 import { GetReservedPlaceResp } from './dto/get-reserve-place.dto';
 import { GetParkPlaceResp } from './dto/get-park-place.dto';
 
+/**
+ * parking controller for http requests
+ *
+ * @export
+ * @class ParkingController
+ */
 @ApiTags("parking")
 @Controller('parking')
 export class ParkingController {
 
+    /**
+     * Creates an instance of ParkingController.
+     * @param {ParkingService} service
+     * @memberof ParkingController
+     */
     constructor(
         private readonly service: ParkingService,
     ) {}
 
+    /**
+     * create park
+     *
+     * @param {CreateParkReq} req
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Post()
     @ApiBody({type: CreateParkReq})
     @ApiResponse({type: CreateParkResp, status: 201})
@@ -42,6 +60,14 @@ export class ParkingController {
         )
     }
 
+    /**
+     * get park by id
+     *
+     * @param {number} id
+     * @param {GetParkParams} query
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Get('/:id')
     @ApiResponse({type: GetParkResp})
     @ApiQuery({enum: ParkEdges, isArray: true, enumName: "edges", required: false, name: 'edges'})
@@ -67,6 +93,13 @@ export class ParkingController {
         )
     }
 
+    /**
+     * get parks
+     *
+     * @param {GetParksParams} query
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Get()
     @ApiResponse({type: GetParksResp, status: 200})
     @ApiQuery({enum: ParkEdges, isArray: true, enumName: "edges", required: false, name: 'edges'})
@@ -90,6 +123,13 @@ export class ParkingController {
         }
     }
 
+    /**
+     * get last park place infos
+     *
+     * @param {number} id
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Get('/:id/parkPlacesInfo/last')
     @ApiResponse({type: GetParkPlaceInfoResp, status: 200})
     @ApiParam({name: 'id', description: "id of park", type: Number})
@@ -104,6 +144,14 @@ export class ParkingController {
         return lastParkPlaceInfo
     }
 
+    /**
+     * create park place
+     *
+     * @param {CreateParkPlaceReq} req
+     * @param {number} id
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Post('/:id/place')
     @ApiBody({type: CreateParkPlaceReq})
     @ApiParam({name: 'id', description: "id of park", type: Number})
@@ -124,6 +172,15 @@ export class ParkingController {
         }
     }
 
+    /**
+     * resreve place
+     *
+     * @param {number} placeId
+     * @param {number} userId
+     * @param {CreateReservePlaceReq} req
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Post('place/:placeId')
     @ApiParam({name: 'placeId', description: "id of place", type: Number})
     @ApiBody({type: CreateReservePlaceReq})
@@ -153,6 +210,13 @@ export class ParkingController {
         }
     }
 
+    /**
+     * get reserved place for user
+     *
+     * @param {number} userId
+     * @return {*} 
+     * @memberof ParkingController
+     */
     @Get('/place/reserved/me')
     @ApiResponse({type: GetReservedPlaceResp, status: 200})
     @ApiBearerAuth()
@@ -166,6 +230,12 @@ export class ParkingController {
         return reservedPlace
     }
 
+    /**
+     * cancel reserved place for user
+     *
+     * @param {number} userId
+     * @memberof ParkingController
+     */
     @Delete('/place/reserved/cancel/me')
     @ApiResponse({status: 200})
     @ApiBearerAuth()

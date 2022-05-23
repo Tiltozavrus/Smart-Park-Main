@@ -1,3 +1,10 @@
+/**
+ * function to decode jwt and get payload
+ *
+ * @export
+ * @param {string} token
+ * @return {*}  {(any | null)}
+ */
 export function parseJwt (token: string): any | null {
     try {
         const base64Url = token.split('.')[1];

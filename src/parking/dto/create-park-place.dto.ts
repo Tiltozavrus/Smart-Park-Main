@@ -5,11 +5,29 @@ import { Geometry, Position } from "geojson"
 import { Point } from "../../common/models/point"
 import { PlaceType } from "../models/place-type"
 
+/**
+ * CreateParkPlaceReq
+ *
+ * @export
+ * @class CreateParkPlaceReq
+ */
 export class CreateParkPlaceReq {
+    /**
+     * floor of place
+     *
+     * @type {number}
+     * @memberof CreateParkPlaceReq
+     */
     @ApiProperty()
     @IsNumber()
     floor: number
 
+    /**
+     * placeUUID
+     *
+     * @type {string}
+     * @memberof CreateParkPlaceReq
+     */
     @ApiProperty(
         {
             example: randomUUID(),
@@ -18,6 +36,12 @@ export class CreateParkPlaceReq {
     @IsUUID()
     placeUUID: string
 
+    /**
+     * place type
+     *
+     * @type {PlaceType}
+     * @memberof CreateParkPlaceReq
+     */
     @ApiProperty(
         {
             enum: PlaceType,
@@ -27,6 +51,12 @@ export class CreateParkPlaceReq {
     @IsEnum(PlaceType, {})
     placeType: PlaceType
     
+    /**
+     * coords of place
+     *
+     * @type {Point}
+     * @memberof CreateParkPlaceReq
+     */
     @ApiProperty(
         {
             example: {

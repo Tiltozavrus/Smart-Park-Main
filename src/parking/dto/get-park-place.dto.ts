@@ -5,13 +5,38 @@ import { Point } from "../../common/models/point";
 import { ParkPlace } from "../models/park-place.model";
 import { PlaceType } from "../models/place-type";
 
+/**
+ * GetParkPlace respnce
+ *
+ * @export
+ * @class GetParkPlaceResp
+ * @implements {ParkPlace}
+ */
 export class GetParkPlaceResp implements ParkPlace {
+    /**
+     * id of park palce
+     *
+     * @type {number}
+     * @memberof GetParkPlaceResp
+     */
     @ApiProperty()
     id: number;
 
+    /**
+     * floor of place
+     *
+     * @type {number}
+     * @memberof GetParkPlaceResp
+     */
     @ApiProperty()
     floor: number;
 
+    /**
+     * place UUID
+     *
+     * @type {string}
+     * @memberof GetParkPlaceResp
+     */
     @ApiProperty(
         {
             example: randomUUID()
@@ -19,6 +44,12 @@ export class GetParkPlaceResp implements ParkPlace {
     )
     placeUUID: string;
 
+    /**
+     * place type
+     *
+     * @type {PlaceType}
+     * @memberof GetParkPlaceResp
+     */
     @ApiProperty(
         {
             example: PlaceType.Standart,
@@ -26,6 +57,12 @@ export class GetParkPlaceResp implements ParkPlace {
     )
     placeType: PlaceType;
 
+    /**
+     * coords of place
+     *
+     * @type {Point}
+     * @memberof GetParkPlaceResp
+     */
     @ApiProperty(
         {
             example: {
